@@ -75,10 +75,11 @@ def findWinner(file):
 			for j, item in enumerate(row):
 				matrix[i][j] = BingoNumber(item)
 		allMatrices.append(matrix)
+	f.close()
 	return [allMatrices, markedNumbers]
+	# Remove return if you want to know first winner
 	winningMatrix, winningNumber = markNumbers(markedNumbers, allMatrices)
 	printMatrix(winningMatrix)
-	print(allMatrices.index(winningMatrix)+1)
 	totalSum = getUnmarkedSum(winningMatrix) * int(winningNumber)
 	print(f"{totalSum=}")
 
